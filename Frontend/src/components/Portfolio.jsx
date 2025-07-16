@@ -45,7 +45,7 @@ const Portfolio = () => {
       {/* Projects Tab */}
       {activeTab === 'projects' && (
         <div className="portfolio-project-card">
-          <h3>🛒 ShopEasy – Full Stack E-commerce Website</h3>
+          <h3>🛒 ShopEasy  Full Stack E-commerce Website</h3>
           <div className="project-images-grid">
             <img src={p1} alt="ShopEasy 1" />
             <img src={p2} alt="ShopEasy 2" />

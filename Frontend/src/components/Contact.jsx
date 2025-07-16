@@ -23,7 +23,7 @@ const Contact = () => {
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
       console.error(error);
-      setStatus('Failed to send message.');
+      setStatus('Failed to send message. Please try again later.');
     }
   };
 
@@ -61,13 +61,34 @@ const Contact = () => {
           <h3>Send a Message</h3>
           <form onSubmit={handleSubmit}>
             <label>Name</label>
-            <input type="text" name="name" value={formData.name} onChange={handleChange} required placeholder="Your Name" />
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              placeholder="Your Name"
+            />
 
             <label>Email</label>
-            <input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="Your Email" />
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              placeholder="Your Email"
+            />
 
             <label>Message</label>
-            <textarea name="message" rows="5" value={formData.message} onChange={handleChange} required placeholder="Type your message..." />
+            <textarea
+              name="message"
+              rows="5"
+              value={formData.message}
+              onChange={handleChange}
+              required
+              placeholder="Type your message..."
+            />
 
             <button type="submit">Send Message</button>
             {status && <p className="status">{status}</p>}
