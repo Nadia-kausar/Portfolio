@@ -1,0 +1,97 @@
+.footer {
+  background-color: #0d0d0d;
+  color: #f0f0f0;
+  padding: 12px 20px 10px; /* ⬅️ minimal vertical padding */
+  font-family: 'Poppins', sans-serif;
+  border-top: 1px solid #1f1f1f;
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1800px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px; /* reduced horizontal padding too */
+}
+
+.footer-brand {
+  margin-bottom: 8px; /* ⬅️ tighter spacing */
+}
+
+.footer-title {
+  font-size: 1.2rem; /* smaller */
+  font-weight: 600;
+  color: #00ffc3;
+  line-height: 1.1;
+}
+
+.footer-role {
+  font-size: 0.85rem;
+  color: #ccc;
+  line-height: 1.2;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px; /* ⬅️ tightest spacing */
+  padding: 0;
+  margin: 10px 0;
+}
+
+.footer-links li a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #f0f0f0;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+  color: #00ffc3;
+}
+
+.footer-icon {
+  color: #00ffc3;
+  transition: transform 0.3s ease;
+}
+
+.footer-links li a:hover .footer-icon {
+  transform: scale(1.2);
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: #777;
+  margin-top: 8px;
+  line-height: 1.1;
+}
+
+/* 📱 Mobile (up to 600px) */
+@media screen and (max-width: 600px) {
+  .footer-title {
+    font-size: 1.1rem;
+  }
+
+  .footer-role {
+    font-size: 0.8rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-copy {
+    font-size: 0.7rem;
+    text-align: center;
+  }
+}

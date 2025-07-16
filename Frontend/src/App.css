@@ -1,0 +1,14 @@
+/* App.css */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background-color: #2b2a2a;
+  color: #111;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: 70px; /* adjust if your navbar is fixed */
+}
