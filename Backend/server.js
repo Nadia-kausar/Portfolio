@@ -10,11 +10,20 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middlewares
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Routes
+// Root route for status check
+app.get('/', (req, res) => {
+  res.json({
+    status: 'active',
+    error: false,
+    message: 'Portfolio Contact API is running'
+  });
+});
+
+// Contact Routes
 app.use('/api', contactRoutes);
 
 // MongoDB Atlas Connection
