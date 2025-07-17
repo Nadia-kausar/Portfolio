@@ -1,7 +1,8 @@
+/* ========== Footer ========== */
 .footer {
   background-color: #0d0d0d;
   color: #f0f0f0;
-  padding: 12px 20px 10px; /* ⬅️ minimal vertical padding */
+  padding: 12px 20px 10px;
   font-family: 'Poppins', sans-serif;
   border-top: 1px solid #1f1f1f;
   width: 100%;
@@ -14,15 +15,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 20px; /* reduced horizontal padding too */
+  padding: 0 20px;
 }
 
 .footer-brand {
-  margin-bottom: 8px; /* ⬅️ tighter spacing */
+  margin-bottom: 8px;
 }
 
 .footer-title {
-  font-size: 1.2rem; /* smaller */
+  font-size: 1.2rem;
   font-weight: 600;
   color: #00ffc3;
   line-height: 1.1;
@@ -39,7 +40,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 12px; /* ⬅️ tightest spacing */
+  gap: 12px;
   padding: 0;
   margin: 10px 0;
 }
@@ -75,7 +76,7 @@
   line-height: 1.1;
 }
 
-/* 📱 Mobile (up to 600px) */
+/* Footer Mobile */
 @media screen and (max-width: 600px) {
   .footer-title {
     font-size: 1.1rem;
@@ -93,5 +94,6 @@
   .footer-copy {
     font-size: 0.7rem;
     text-align: center;
+    padding: 0 10px;
   }
 }

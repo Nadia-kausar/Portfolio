@@ -1,3 +1,4 @@
+/* ========== Navbar ========== */
 .navbar {
   position: fixed;
   top: 0;
@@ -26,7 +27,6 @@
   letter-spacing: 1px;
 }
 
-/* Hamburger for mobile */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -41,7 +41,6 @@
   transition: 0.3s ease;
 }
 
-/* Nav Links */
 .nav-links {
   display: flex;
   gap: 20px;
@@ -65,8 +64,14 @@
   color: #0d0d0d;
 }
 
-/* Responsive */
+/* Mobile Nav */
 @media screen and (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 20px;
+  }
+
   .hamburger {
     display: flex;
   }
@@ -98,6 +103,8 @@
   .nav-btn {
     width: 80%;
     margin: auto;
+    font-size: 0.9rem;
+    padding: 6px 12px;
   }
 
   .bar.open:nth-child(1) {
