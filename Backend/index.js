@@ -19,6 +19,14 @@ app.get('/', (req, res) => {
   res.send('✅ Portfolio backend is running');
 });
 
+// 404 Handler (This must be after all other routes)
+app.use((req, res, next) => {
+  res.status(404).json({
+    error: '❌ Route not found',
+    path: req.originalUrl
+  });
+});
+
 // MongoDB Connection
 const connectDB = async () => {
   try {
@@ -26,7 +34,7 @@ const connectDB = async () => {
     console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     console.error('❌ MongoDB connection error:', error.message);
-    process.exit(1); // Stop the server if DB connection fails
+    process.exit(1);
   }
 };
 
