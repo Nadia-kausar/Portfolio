@@ -8,12 +8,12 @@
 
 /* ========== Heading ========== */
 .contact-heading {
-  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  font-size: clamp(2rem, 5vw, 2.6rem);
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   color: #00ffc3;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 
 /* ========== Card Container ========== */
@@ -29,61 +29,69 @@
 /* ========== Individual Card ========== */
 .contact-card {
   background-color: #111;
-  padding: 30px 24px;
-  border-radius: 12px;
+  padding: 40px 28px;
+  border-radius: 14px;
   width: 100%;
-  max-width: 460px;
-  box-shadow: 0 0 15px rgba(0, 255, 195, 0.1);
-  transition: box-shadow 0.3s ease;
+  max-width: 500px;
+  box-shadow: 0 0 20px rgba(0, 255, 195, 0.12);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .contact-card:hover {
-  box-shadow: 0 0 25px rgba(0, 255, 195, 0.2);
+  box-shadow: 0 0 30px rgba(0, 255, 195, 0.2);
+  transform: translateY(-3px);
 }
 
 .contact-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 16px;
+  font-size: 1.7rem;
+  margin-bottom: 20px;
   color: #00ffc3;
   border-bottom: 1px solid #00ffc3;
-  padding-bottom: 6px;
+  padding-bottom: 8px;
 }
 
 .contact-card p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 10px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 14px;
 }
 
 /* ========== Contact Details ========== */
 .contact-details p {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
-  font-size: 0.95rem;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 1rem;
 }
 
-/* ========== Social Links ========== */
+/* ========== Social Links (Stacked Vertically) ========== */
 .social-links {
-  margin-top: 14px;
+  margin-top: 20px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
 }
 
 .social-links a {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   color: #00ffc3;
   font-weight: 500;
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-size: 1rem;
+  padding: 6px 0;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 4px;
 }
 
-.social-links a:hover {
-  color: #f39c12;
+.social-links a:hover,
+.social-links a:focus-visible {
+  color: #000;
+  background-color: #00ffc3;
+  padding-left: 6px;
 }
 
 /* ========== Form Card ========== */
@@ -96,12 +104,19 @@
 .form-card textarea {
   background-color: #222;
   color: #f0f0f0;
-  padding: 12px;
+  padding: 14px;
   border: 1px solid #444;
-  border-radius: 6px;
-  margin-bottom: 16px;
-  font-size: 0.95rem;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-size: 1rem;
   resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.form-card input:focus,
+.form-card textarea:focus {
+  border-color: #00ffc3;
+  outline: none;
 }
 
 .form-card input::placeholder,
@@ -114,21 +129,25 @@
   color: #000;
   font-weight: bold;
   border: none;
-  padding: 12px;
-  border-radius: 6px;
+  padding: 14px;
+  border-radius: 8px;
   cursor: pointer;
+  font-size: 1rem;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.form-card button:hover {
+.form-card button:hover,
+.form-card button:focus-visible {
   background-color: #00e6b8;
   transform: translateY(-1px);
+  outline: none;
 }
 
 /* ========== Icon Styling ========== */
 .icon {
   color: #00ffc3;
   flex-shrink: 0;
+  font-size: 1.2rem;
 }
 
 /* ========== Responsive: Tablets ========== */
@@ -140,42 +159,46 @@
   }
 
   .contact-card {
-    max-width: 90%;
+    max-width: 92%;
   }
 
   .contact-heading {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 }
 
 /* ========== Responsive: Phones ========== */
 @media (max-width: 600px) {
   .contact-heading {
-    font-size: 1.6rem;
-    line-height: 1.3;
+    font-size: 2rem;
+    line-height: 1.4;
+  }
+
+  .contact-card {
+    padding: 36px 24px;
   }
 
   .contact-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .contact-card p,
   .contact-details p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 
   .form-card input,
   .form-card textarea {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    padding: 12px;
   }
 
   .form-card button {
-    padding: 10px;
-    font-size: 0.9rem;
+    padding: 12px;
+    font-size: 1rem;
   }
 
   .social-links {
-    flex-direction: column;
-    align-items: flex-start;
+    gap: 10px;
   }
 }

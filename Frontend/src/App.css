@@ -1,5 +1,4 @@
-/* ===== GLOBAL STYLES ===== */
-
+/* ========== GLOBAL STYLES ========== */
 * {
   margin: 0;
   padding: 0;
@@ -29,8 +28,7 @@ ul {
   margin: 0;
 }
 
-/* ===== APP CONTAINER ===== */
-
+/* ========== APP CONTAINER STYLES ========== */
 .app-container {
   display: flex;
   flex-direction: column;
@@ -42,5 +40,5 @@ ul {
 
 .main-content {
   flex: 1;
-  padding-top: 70px; /* adjust if navbar is fixed */
+  padding-top: 70px; /* Adjust if navbar is fixed */
 }
