@@ -17,7 +17,11 @@ app.use(express.json());
 
 // Basic API Health Check
 app.get('/', (req, res) => {
-  res.json({ status: 'active', message: 'API is running' });
+  res.json({
+    active: true,
+    error: false,
+    message: '✅ API is running successfully'
+  });
 });
 
 // API Routes
