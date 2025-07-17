@@ -14,17 +14,21 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('Sending...');
+
     try {
-      const res = await axios.post('https://website-backend-project.vercel.app/api/contact', formData);
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_URL}/contact`, // ✅ Use environment variable
+        formData
+      );
       if (res.data.success) {
         setStatus('✅ Message sent successfully!');
         setFormData({ name: '', email: '', message: '' });
       } else {
-        setStatus('❌ Failed to send message.');
+        setStatus('❌ Could not send message. Please try again.');
       }
     } catch (error) {
-      console.error('Submit error:', error);
-      setStatus('❌ Server error. Please try again later.');
+      console.error('Submit error:', error.message);
+      setStatus('❌ Unable to reach the server. Please try again later.');
     }
   };
 
