@@ -15,15 +15,16 @@ const Contact = () => {
     e.preventDefault();
     setStatus('Sending...');
     try {
-      const res = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/api/contact`,
-        formData
-      );
-      setStatus('Message sent successfully!');
-      setFormData({ name: '', email: '', message: '' });
+      const res = await axios.post('http://localhost:5000/api/contact', formData);
+      if (res.data.success) {
+        setStatus('✅ Message sent successfully!');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus('❌ Failed to send message.');
+      }
     } catch (error) {
-      console.error(error);
-      setStatus('Failed to send message. Please try again later.');
+      console.error('Submit error:', error);
+      setStatus('❌ Server error. Please try again later.');
     }
   };
 
@@ -31,13 +32,12 @@ const Contact = () => {
     <section className="contact-section" id="contact">
       <h2 className="contact-heading">Contact Me</h2>
       <div className="contact-cards">
-
-        {/* LEFT: Info Card */}
+        
+        {/* Info Card */}
         <div className="contact-card info-card">
           <h3>Reach Out</h3>
           <p>Let’s build something great together.</p>
           <p><strong>Open to Collaborations</strong></p>
-          <p>Whether you have a project in mind, need help bringing an idea to life, or just want to connect — feel free to reach out.</p>
           <div className="contact-details">
             <p><Mail size={16} className="icon" /> <strong>Email:</strong> kausarnadia32@gmail.com</p>
             <p><Phone size={16} className="icon" /> <strong>Phone:</strong> +92 339 4021996</p>
@@ -56,12 +56,13 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* RIGHT: Contact Form */}
+        {/* Contact Form */}
         <div className="contact-card form-card">
           <h3>Send a Message</h3>
           <form onSubmit={handleSubmit}>
-            <label>Name</label>
+            <label htmlFor="name">Name</label>
             <input
+              id="name"
               type="text"
               name="name"
               value={formData.name}
@@ -70,8 +71,9 @@ const Contact = () => {
               placeholder="Your Name"
             />
 
-            <label>Email</label>
+            <label htmlFor="email">Email</label>
             <input
+              id="email"
               type="email"
               name="email"
               value={formData.email}
@@ -80,8 +82,9 @@ const Contact = () => {
               placeholder="Your Email"
             />
 
-            <label>Message</label>
+            <label htmlFor="message">Message</label>
             <textarea
+              id="message"
               name="message"
               rows="5"
               value={formData.message}
