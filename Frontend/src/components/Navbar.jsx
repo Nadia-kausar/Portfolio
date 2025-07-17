@@ -38,7 +38,12 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="navbar-logo" onClick={() => scrollToSection("home")}>
+        <div
+          className="navbar-logo"
+          onClick={() => scrollToSection("home")}
+          role="button"
+          tabIndex={0}
+        >
           NadiaDev
         </div>
 
@@ -57,7 +62,10 @@ const Navbar = () => {
         <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
           {sections.map(({ id, label }) => (
             <li key={id}>
-              <button className="nav-btn" onClick={() => scrollToSection(id)}>
+              <button
+                className="nav-btn"
+                onClick={() => scrollToSection(id)}
+              >
                 {label}
               </button>
             </li>

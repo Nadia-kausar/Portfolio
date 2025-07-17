@@ -5,10 +5,11 @@
   font-family: 'Poppins', sans-serif;
   padding: 100px 40px 60px;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .container {
-  max-width: 1800px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 40px;
 }
@@ -29,22 +30,22 @@
 }
 
 .intro-left h1 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3.2rem);
   margin-bottom: 10px;
   color: #00ffc3;
 }
 
 .intro-left h2 {
-  font-size: 1.8rem;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
   margin-bottom: 20px;
   color: #ffffff;
 }
 
 .intro-left p {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
   color: #ccc;
   margin-bottom: 16px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .btn-primary {
@@ -54,13 +55,17 @@
   border: none;
   border-radius: 6px;
   font-weight: 600;
-  text-decoration: none;
   display: inline-block;
-  transition: all 0.3s ease;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:focus {
   background-color: #00c9a7;
+  transform: translateY(-2px);
 }
 
 .intro-right {
@@ -96,18 +101,6 @@
     max-width: 100%;
   }
 
-  .intro-left h1 {
-    font-size: 2.4rem;
-  }
-
-  .intro-left h2 {
-    font-size: 1.4rem;
-  }
-
-  .intro-left p {
-    font-size: 1rem;
-  }
-
   .intro-right img {
     width: 220px;
     height: 220px;
@@ -123,21 +116,12 @@
     padding: 0 20px;
   }
 
-  .intro-left h1 {
-    font-size: 2rem;
-  }
-
-  .intro-left h2 {
-    font-size: 1.2rem;
-  }
-
   .intro-left p {
-    font-size: 0.95rem;
     padding: 0 10px;
   }
 
   .btn-primary {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     padding: 10px 20px;
   }
 
@@ -166,8 +150,9 @@
   }
 
   .btn-primary {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     padding: 8px 16px;
+    width: 100%;
   }
 }
 

@@ -1,14 +1,46 @@
-/* App.css */
+/* ===== GLOBAL STYLES ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0d0d0d;
+  color: #f0f0f0;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ===== APP CONTAINER ===== */
+
 .app-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   font-family: 'Poppins', sans-serif;
   background-color: #2b2a2a;
-  color: #111;
+  color: #f0f0f0;
 }
 
 .main-content {
   flex: 1;
-  padding-top: 70px; /* adjust if your navbar is fixed */
+  padding-top: 70px; /* adjust if navbar is fixed */
 }
