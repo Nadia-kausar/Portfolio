@@ -17,7 +17,7 @@ const Contact = () => {
 
     try {
       const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/contact`, // ✅ Use environment variable
+        `${import.meta.env.VITE_API_URL}/contact`, // ✅ Correct endpoint
         formData
       );
       if (res.data.success) {
@@ -36,7 +36,7 @@ const Contact = () => {
     <section className="contact-section" id="contact">
       <h2 className="contact-heading">Contact Me</h2>
       <div className="contact-cards">
-        
+
         {/* Info Card */}
         <div className="contact-card info-card">
           <h3>Reach Out</h3>
