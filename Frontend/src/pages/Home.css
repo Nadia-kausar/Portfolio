@@ -43,6 +43,7 @@ html, body {
 .intro-left {
   flex: 1 1 400px;
   max-width: 600px;
+  text-align: center;
 }
 
 .intro-left h1 {
@@ -111,16 +112,25 @@ html, body {
 @media screen and (max-width: 992px) {
   .intro-section {
     flex-direction: column-reverse;
-    text-align: center;
-    gap: 30px;
-  }
-
-  .intro-left {
-    max-width: 100%;
-  }
-
-  .intro-right {
+    align-items: center;
     justify-content: center;
+    text-align: center;
+  }
+
+  .intro-left,
+  .intro-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .intro-left h1,
+  .intro-left h2,
+  .intro-left p {
+    width: 100%;
   }
 
   .intro-right img {
