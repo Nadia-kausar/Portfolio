@@ -1,17 +1,42 @@
-import React, { useState } from 'react';
-import './Portfolio.css';
+import React, { useState } from "react";
+import "./Portfolio.css";
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import {
   FaReact, FaHtml5, FaCss3Alt, FaJs, FaBootstrap, FaPython,
   FaGitAlt, FaGithub, FaFigma
 } from 'react-icons/fa';
 import { SiTailwindcss, SiNextdotjs, SiCplusplus } from 'react-icons/si';
 
-import p1 from '../assets/p1.png';
-import p2 from '../assets/p2.png';
-import p3 from '../assets/p3.png';
-import p4 from '../assets/p4.png';
+import p1 from "../assets/p1.png";
+import p2 from "../assets/p2.png";
+import p3 from "../assets/p3.png";
+import p4 from "../assets/p4.png";
+import f1 from "../assets/f1.png";
+import f2 from "../assets/f2.png";
+import f3 from "../assets/f3.png";
+import fi1 from "../assets/fi1.png";
+import fi2 from "../assets/fi2.png";
+import fi3 from "../assets/fi3.png";
 import c1 from '../assets/c1.png';
 import c2 from '../assets/c2.png';
+
+const projects = [
+  {
+    title: "ShopEasy - MERN E-commerce",
+    images: [p1, p2, p3, p4],
+    description: "A full-stack e-commerce website like Daraz built using React, Node.js, Express & MongoDB. Features user authentication, product browsing, cart, reviews, and admin dashboard."
+  },
+  {
+    title: "Food Website - Frontend",
+    images: [f1, f2, f3],
+    description: "A clean, responsive food delivery frontend designed with HTML, CSS, and JavaScript, showcasing menu, home, and contact pages."
+  },
+  {
+    title: "Figma Mobile UI Design",
+    images: [fi1, fi2, fi3],
+    description: "A mobile-friendly UI/UX design project created in Figma. Focused on intuitive layout, accessibility, and visual consistency."
+  }
+];
 
 const techIcons = [
   { icon: <FaReact />, name: "React" },
@@ -30,6 +55,11 @@ const techIcons = [
 
 const Portfolio = () => {
   const [activeTab, setActiveTab] = useState('projects');
+  const [index, setIndex] = useState(0);
+
+  const handleNext = () => setIndex((index + 1) % projects.length);
+  const handlePrev = () => setIndex((index - 1 + projects.length) % projects.length);
+  const current = projects[index];
 
   return (
     <section className="portfolio-section">
@@ -44,20 +74,25 @@ const Portfolio = () => {
 
       {/* Projects Tab */}
       {activeTab === 'projects' && (
-        <div className="portfolio-project-card">
-          <h3>🛒 ShopEasy  Full Stack E-commerce Website</h3>
-          <div className="project-images-grid">
-            <img src={p1} alt="ShopEasy 1" />
-            <img src={p2} alt="ShopEasy 2" />
-            <img src={p3} alt="ShopEasy 3" />
-            <img src={p4} alt="ShopEasy 4" />
+        <div className="portfolio-content">
+          <button className="nav-btn" onClick={handlePrev}><ChevronLeft /></button>
+
+          <div className="project-card">
+            <h3 className="project-title">{current.title}</h3>
+            <div className={`image-grid ${index === 2 ? "figma-grid" : ""}`}>
+              {current.images.map((img, i) => (
+                <img
+                  key={i}
+                  src={img}
+                  alt={`project-${i}`}
+                  className={`project-img ${index === 2 ? "figma-img" : ""}`}
+                />
+              ))}
+            </div>
+            <p className="project-description">{current.description}</p>
           </div>
-          <p className="project-description">
-            ShopEasy is a full-featured MERN stack e-commerce platform developed with React.js, Node.js, Express, and MongoDB.
-            The application supports secure authentication, product browsing, admin and user dashboards, cart and order management,
-            and a review system. The frontend design is clean and responsive, closely following modern UX patterns similar to Daraz.
-            This project demonstrates practical full-stack development and integration of REST APIs, MongoDB schemas, and role-based access.
-          </p>
+
+          <button className="nav-btn" onClick={handleNext}><ChevronRight /></button>
         </div>
       )}
 

@@ -1,3 +1,16 @@
+/* ========== Reset ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent page from shifting horizontally */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 /* ========== Base Styling ========== */
 .homepage {
   background-color: #0d0d0d;
@@ -6,12 +19,14 @@
   padding: 100px 40px 60px;
   min-height: 100vh;
   overflow-x: hidden;
+  width: 100%;
 }
 
 .container {
   max-width: 1600px;
   margin: 0 auto;
   padding: 0 40px;
+  width: 100%;
 }
 
 /* ========== Intro Section ========== */
@@ -22,6 +37,7 @@
   flex-wrap: wrap;
   gap: 40px;
   margin-bottom: 60px;
+  width: 100%;
 }
 
 .intro-left {
@@ -30,19 +46,19 @@
 }
 
 .intro-left h1 {
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-size: clamp(2.5rem, 6vw, 3rem);
   margin-bottom: 10px;
   color: #00ffc3;
 }
 
 .intro-left h2 {
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-size: clamp(1.5rem, 4vw, 2rem);
   margin-bottom: 20px;
   color: #ffffff;
 }
 
 .intro-left p {
-  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  font-size: clamp(1rem, 3vw, 1.1rem);
   color: #ccc;
   margin-bottom: 16px;
   line-height: 1.7;
@@ -60,6 +76,7 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
   font-size: 1rem;
   cursor: pointer;
+  width: fit-content;
 }
 
 .btn-primary:hover,
@@ -68,7 +85,7 @@
   transform: translateY(-2px);
 }
 
-/* ========== Updated Intro Right ========== */
+/* ========== Right Section ========== */
 .intro-right {
   flex: 0 1 420px;
   display: flex;
@@ -77,8 +94,8 @@
 }
 
 .intro-right img {
-  width: 300px;
-  height: 300px;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid #00ffc3;
@@ -90,7 +107,7 @@
   transform: scale(1.05);
 }
 
-/* ========== Responsive Breakpoints ========== */
+/* ========== Responsive ========== */
 @media screen and (max-width: 992px) {
   .intro-section {
     flex-direction: column-reverse;
@@ -107,90 +124,101 @@
   }
 
   .intro-right img {
-    width: 240px;
-    height: 240px;
+    width: 300px;
+    height: 300px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .homepage {
-    padding: 80px 20px 50px;
+    padding: 100px 20px 60px;
   }
 
   .container {
-    padding: 0 20px;
+    padding: 0 16px;
+  }
+
+  .intro-left h1 {
+    font-size: 2.8rem;
+  }
+
+  .intro-left h2 {
+    font-size: 1.8rem;
   }
 
   .intro-left p {
     padding: 0 10px;
+    font-size: 1.2rem;
   }
 
   .btn-primary {
-    font-size: 0.9rem;
-    padding: 10px 20px;
+    font-size: 1.2rem;
+    padding: 14px 26px;
+    width: 100%;
   }
 
   .intro-right img {
-    width: 200px;
-    height: 200px;
+    width: 280px;
+    height: 280px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .intro-left h1 {
-    font-size: 1.6rem;
+    font-size: 2.6rem;
   }
 
   .intro-left h2 {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .intro-left p {
-    font-size: 0.9rem;
-  }
-
-  .intro-right img {
-    width: 170px;
-    height: 170px;
+    font-size: 1.2rem;
   }
 
   .btn-primary {
-    font-size: 0.85rem;
-    padding: 8px 16px;
-    width: 100%;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .intro-left h1 {
-    font-size: 4rem;
-  }
-
-  .intro-left h2 {
-    font-size: 2.2rem;
-  }
-
-  .intro-left p {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    padding: 12px 22px;
   }
 
   .intro-right img {
-    width: 380px;
-    height: 380px;
+    width: 240px;
+    height: 240px;
   }
 }
 
+/* ========== Laptop View (reduce size slightly) ========== */
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .intro-left h1 {
+    font-size: 2.8rem;
+  }
+
+  .intro-left h2 {
+    font-size: 1.8rem;
+  }
+
+  .intro-left p {
+    font-size: 1rem;
+  }
+
+  .intro-right img {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+/* ========== Extra Large Screens ========== */
 @media screen and (min-width: 1920px) {
   .container {
     max-width: 1800px;
   }
 
   .intro-left h1 {
-    font-size: 4.5rem;
+    font-size: 4.2rem;
   }
 
   .intro-left h2 {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
 
   .intro-left p {

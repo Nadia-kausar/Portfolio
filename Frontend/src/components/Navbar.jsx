@@ -43,6 +43,7 @@ const Navbar = () => {
           onClick={() => scrollToSection("home")}
           role="button"
           tabIndex={0}
+          onKeyDown={(e) => e.key === "Enter" && scrollToSection("home")}
         >
           NadiaDev
         </div>
@@ -50,22 +51,19 @@ const Navbar = () => {
         <div
           className="hamburger"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
           role="button"
           tabIndex={0}
+          onKeyDown={(e) => e.key === "Enter" && setMenuOpen(!menuOpen)}
         >
-          <span className={`bar ${menuOpen ? "open" : ""}`}></span>
-          <span className={`bar ${menuOpen ? "open" : ""}`}></span>
-          <span className={`bar ${menuOpen ? "open" : ""}`}></span>
+          <div className={`bar ${menuOpen ? "open" : ""}`}></div>
+          <div className={`bar ${menuOpen ? "open" : ""}`}></div>
+          <div className={`bar ${menuOpen ? "open" : ""}`}></div>
         </div>
 
-        <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+        <ul className={`nav-links ${menuOpen ? "show" : ""}`}>
           {sections.map(({ id, label }) => (
             <li key={id}>
-              <button
-                className="nav-btn"
-                onClick={() => scrollToSection(id)}
-              >
+              <button className="nav-btn" onClick={() => scrollToSection(id)}>
                 {label}
               </button>
             </li>
