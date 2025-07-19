@@ -37,6 +37,15 @@
   flex-wrap: wrap;
 }
 
+/* Center cards on mobile */
+@media (max-width: 768px) {
+  .skills-grid {
+    flex-direction: column;
+    gap: 36px;
+    align-items: center; /* Center children horizontally */
+  }
+}
+
 .skill-category {
   flex: 1 1 340px;
   background-color: #111;
@@ -45,6 +54,8 @@
   border: 1px solid #222;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
   max-width: 360px;
+  /* Add margin auto for horizontal centering on small screens */
+  margin: 0 auto;
 }
 
 .skill-category:hover {
@@ -121,14 +132,8 @@
     margin-bottom: 48px;
   }
 
-  .skills-grid {
-    flex-direction: column;
-    gap: 36px;
-  }
-
   .skill-category {
     padding: 28px;
-    margin: 0 auto;
     max-width: 95%;
   }
 
