@@ -14,9 +14,9 @@ import p4 from "../assets/p4.png";
 import f1 from "../assets/f1.png";
 import f2 from "../assets/f2.png";
 import f3 from "../assets/f3.png";
-import fi1 from "../assets/fi1.png";
-import fi2 from "../assets/fi2.png";
-import fi3 from "../assets/fi3.png";
+import fi1 from "../assets/nadia.jpeg";
+import fi2 from "../assets/nadia1.jpeg";
+import fi3 from "../assets/nadia2.jpeg";
 import c1 from '../assets/c1.png';
 import c2 from '../assets/c2.png';
 
