@@ -1,5 +1,7 @@
-/* ======= Reset & Base Styles ======= */
-* {
+/* GLOBAL RESET – should be at the top */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,25 +10,38 @@
 html, body {
   width: 100%;
   min-height: 100%;
+  overflow-x: hidden;       /* Prevents horizontal scroll */
   font-family: 'Poppins', sans-serif;
   background-color: #0d0d0d;
   color: #f0f0f0;
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-button {
-  cursor: pointer;
-  font-family: inherit;
-}
-
+/* Make sure images don’t overflow */
 img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* Ensure containers never overflow */
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+/* Fix for intro section on small screens (cleaned) */
+.intro-section {
+  width: 100%;
+}
+
+/* Optional: Fix other large elements */
+section,
+div,
+main {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
