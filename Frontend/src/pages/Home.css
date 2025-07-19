@@ -1,37 +1,12 @@
-/* ========== Reset ========== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-}
-
-/* ========== Base Styling ========== */
-:root {
-  --primary-color: #00ffc3;
-  --primary-bg: #0d0d0d;
-  --hover-bg: #00ffc3;
-  --hover-text: #0d0d0d;
-  --white: #ffffff;
-  --font-lg: 1.2rem;
-  --font-xl: 1.5rem;
-  --font-xxl: 2rem;
-}
-
+/* ========== HOME ========== */
 .homepage {
   background-color: var(--primary-bg);
-  color: #f0f0f0;
-  font-family: 'Poppins', sans-serif;
   padding: 100px 0 80px;
   min-height: 100vh;
   width: 100%;
 }
 
-/* ========== Container ========== */
 .container {
   max-width: 1300px;
   margin: 0 auto;
@@ -39,10 +14,9 @@ html, body {
   width: 100%;
 }
 
-/* ========== Intro Section ========== */
 .intro-section {
   display: flex;
-  flex-direction: row; /* Text left, image right on desktop */
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -59,20 +33,17 @@ html, body {
 
 .intro-left h1 {
   font-size: clamp(2.6rem, 6vw, 3.4rem);
-  margin-bottom: 14px;
   color: var(--primary-color);
 }
 
 .intro-left h2 {
   font-size: clamp(1.6rem, 4.5vw, 2.2rem);
-  margin-bottom: 24px;
   color: var(--white);
 }
 
 .intro-left p {
   font-size: clamp(1.05rem, 3.5vw, 1.2rem);
   color: #ccc;
-  margin-bottom: 20px;
   line-height: 1.8;
 }
 
@@ -83,20 +54,16 @@ html, body {
   border: none;
   border-radius: 6px;
   font-weight: 600;
-  text-align: center;
-  transition: background-color 0.3s ease, transform 0.2s ease;
   font-size: 1.1rem;
   cursor: pointer;
   width: fit-content;
 }
 
-.btn-primary:hover,
-.btn-primary:focus {
+.btn-primary:hover {
   background-color: #00c9a7;
   transform: translateY(-2px);
 }
 
-/* ========== Right Section ========== */
 .intro-right {
   flex: 0 1 360px;
   display: flex;
@@ -118,154 +85,18 @@ html, body {
   transform: scale(1.05);
 }
 
-/* ========== Responsive ========== */
 @media screen and (max-width: 1024px) {
-  .container {
-    padding: 0 32px;
-  }
-
   .intro-section {
     flex-direction: column-reverse;
-    gap: 32px;
     text-align: center;
   }
 
-  .intro-left {
-    max-width: 100%;
-  }
-
-  .intro-left h1 {
-    font-size: 2.8rem;
-  }
-
-  .intro-left h2 {
-    font-size: 2rem;
-  }
-
-  .intro-left p {
-    font-size: 1.15rem;
-  }
-
   .btn-primary {
-    font-size: 1.2rem;
-    padding: 14px 26px;
+    width: 100%;
   }
 
   .intro-right img {
     width: 280px;
     height: 280px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .homepage {
-    padding: 120px 0 100px; /* Increased padding for mobile */
-  }
-
-  .container {
-    padding: 0 24px;
-  }
-
-  .intro-left,
-  .intro-right {
-    align-items: center;
-    text-align: center;
-    width: 100%;
-  }
-
-  .intro-left h1 {
-    font-size: 2.6rem;
-  }
-
-  .intro-left h2 {
-    font-size: 1.8rem;
-  }
-
-  .intro-left p {
-    font-size: 1.1rem;
-  }
-
-  .btn-primary {
-    font-size: 1.15rem;
-    padding: 14px 24px;
-    width: 100%;
-  }
-
-  .intro-right img {
-    width: 260px;
-    height: 260px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .intro-left h1 {
-    font-size: 2.4rem;
-  }
-
-  .intro-left h2 {
-    font-size: 1.6rem;
-  }
-
-  .intro-left p {
-    font-size: 1.05rem;
-  }
-
-  .btn-primary {
-    font-size: 1.1rem;
-    padding: 12px 20px;
-  }
-
-  .intro-right img {
-    width: 240px;
-    height: 240px;
-  }
-}
-
-/* ========== Laptop View ========== */
-@media screen and (min-width: 1024px) and (max-width: 1440px) {
-  .intro-section {
-    justify-content: center;
-    gap: 50px;
-  }
-
-  .intro-left h1 {
-    font-size: 3rem;
-  }
-
-  .intro-left h2 {
-    font-size: 2rem;
-  }
-
-  .intro-left p {
-    font-size: 1.1rem;
-  }
-
-  .intro-right img {
-    width: 320px;
-    height: 320px;
-  }
-}
-
-/* ========== Extra Large Screens ========== */
-@media screen and (min-width: 1920px) {
-  .container {
-    max-width: 1800px;
-  }
-
-  .intro-left h1 {
-    font-size: 4.2rem;
-  }
-
-  .intro-left h2 {
-    font-size: 2.5rem;
-  }
-
-  .intro-left p {
-    font-size: 1.4rem;
-  }
-
-  .intro-right img {
-    width: 420px;
-    height: 420px;
   }
 }

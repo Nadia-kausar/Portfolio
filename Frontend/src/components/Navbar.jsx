@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { scroller } from "react-scroll";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -23,8 +22,6 @@ const Navbar = () => {
     } else {
       scroll();
     }
-
-    setMenuOpen(false);
   };
 
   const sections = [
@@ -48,19 +45,7 @@ const Navbar = () => {
           NadiaDev
         </div>
 
-        <div
-          className="hamburger"
-          onClick={() => setMenuOpen(!menuOpen)}
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => e.key === "Enter" && setMenuOpen(!menuOpen)}
-        >
-          <div className={`bar ${menuOpen ? "open" : ""}`}></div>
-          <div className={`bar ${menuOpen ? "open" : ""}`}></div>
-          <div className={`bar ${menuOpen ? "open" : ""}`}></div>
-        </div>
-
-        <ul className={`nav-links ${menuOpen ? "show" : ""}`}>
+        <ul className="nav-links">
           {sections.map(({ id, label }) => (
             <li key={id}>
               <button className="nav-btn" onClick={() => scrollToSection(id)}>

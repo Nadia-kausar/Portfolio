@@ -1,20 +1,20 @@
-
+/* ========== FOOTER ========== */
 .footer {
   background-color: var(--primary-bg);
   color: var(--white);
-  padding: 60px 0 40px;
+  padding: 60px 5% 40px;
   border-top: 3px solid #1f1f1f;
   box-shadow: 0 -8px 32px rgba(0, 255, 195, 0.2);
   text-align: center;
   width: 100%;
   font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 
 .footer-title {
   font-size: clamp(1.6rem, 4vw, 2rem);
   font-weight: 800;
   color: var(--primary-color);
-  text-shadow: 0 0 6px rgba(0, 255, 195, 0.4);
   margin-bottom: 6px;
 }
 
@@ -73,44 +73,20 @@
   margin-right: auto;
 }
 
+/* ========== Responsive ========== */
 @media screen and (max-width: 768px) {
-  .hamburger {
-    display: flex;
-    position: absolute;
-    top: 24px;
-    right: 24px;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
-    background-color: var(--primary-bg);
-    max-height: 0;
-    overflow: hidden;
-    padding: 0;
-    z-index: 999;
-    transition: max-height 0.3s ease;
-  }
-
-  .nav-links.open {
-    max-height: 400px;
-    padding: 20px 0;
-  }
-
-  .nav-btn {
-    width: 80%;
+  .footer {
+    padding: 60px 8% 40px;
   }
 
   .footer-links {
     flex-direction: column;
     gap: 18px;
   }
+}
 
-  .footer-title {
-    font-size: 1.6rem;
+@media screen and (min-width: 1280px) {
+  .footer {
+    margin-right: 4%;
   }
 }
