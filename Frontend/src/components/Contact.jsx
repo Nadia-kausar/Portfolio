@@ -16,11 +16,28 @@ const Contact = () => {
     setStatus('Sending...');
 
     try {
+      // 1. Send to your existing backend
       const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/contact`, // ✅ Correct endpoint
+        `${import.meta.env.VITE_API_URL}/contact`,
         formData
       );
+
+      // 2. If backend successful, also send to FormSubmit
       if (res.data.success) {
+        // Send to Gmail via FormSubmit
+        await fetch('https://formsubmit.co/ajax/kausarnadia32@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+          }),
+        });
+
         setStatus('✅ Message sent successfully!');
         setFormData({ name: '', email: '', message: '' });
       } else {
