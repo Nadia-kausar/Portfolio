@@ -11,30 +11,64 @@ import p1 from "../assets/p1.png";
 import p2 from "../assets/p2.png";
 import p3 from "../assets/p3.png";
 import p4 from "../assets/p4.png";
+
 import f1 from "../assets/f1.png";
 import f2 from "../assets/f2.png";
 import f3 from "../assets/f3.png";
+
 import fi1 from "../assets/nadia.jpeg";
 import fi2 from "../assets/nadia1.jpeg";
 import fi3 from "../assets/nadia2.jpeg";
+
 import c1 from '../assets/c1.png';
 import c2 from '../assets/c2.png';
+
+/* ==== New BookHaven Assets ==== */
+import b1 from '../assets/b1.png';
+import b2 from '../assets/b2.png';
+import b3 from '../assets/b3.png';
+import b4 from '../assets/b4.png';
+import b5 from '../assets/b5.png';
+import b6 from '../assets/b6.png';
+
+/* ==== New Coffee Website Assets ==== */
+import s1 from '../assets/s1.png';
+import s2 from '../assets/s2.png';
+import s3 from '../assets/s3.png';
+import s4 from '../assets/s4.png';
+import s5 from '../assets/s5.png';
+import s6 from '../assets/s6.png';
 
 const projects = [
   {
     title: "ShopEasy - MERN E-commerce",
     images: [p1, p2, p3, p4],
-    description: "A full-stack e-commerce website like Daraz built using React, Node.js, Express & MongoDB. Features user authentication, product browsing, cart, reviews, and admin dashboard."
+    description:
+      "A full-stack e-commerce website like Daraz built using React, Node.js, Express & MongoDB. Features user authentication, product browsing, cart, reviews, and admin dashboard."
   },
   {
-    title: "Food Website - Frontend",
+    title: "Food Website - HTML/CSS/JavaScript",
     images: [f1, f2, f3],
-    description: "A clean, responsive food delivery frontend designed with HTML, CSS, and JavaScript, showcasing menu, home, and contact pages."
+    description:
+      "A clean, responsive food delivery frontend designed with HTML, CSS, and JavaScript. Includes menu, home, and contact pages, optimized for mobile and desktop."
   },
   {
     title: "Figma Mobile UI Design",
     images: [fi1, fi2, fi3],
-    description: "A mobile-friendly UI/UX design project created in Figma. Focused on intuitive layout, accessibility, and visual consistency."
+    description:
+      "A mobile-friendly UI/UX design project created in Figma. Focused on intuitive layout, accessibility, and visual consistency."
+  },
+  {
+    title: "📚 BookHaven - React & Django Online Bookstore",
+    images: [b1, b2, b3, b4, b5, b6],
+    description:
+      "A full-stack online bookstore built with a React frontend, Django backend, and PostgreSQL database. Includes user and superuser (admin) functionality for book management, order processing, and category handling. Fully responsive for laptops and mobiles."
+  },
+  {
+    title: "☕ Coffee Website - HTML/CSS & Django",
+    images: [s1, s2, s3, s4, s5, s6],
+    description:
+      "A modern coffee shop website with an HTML/CSS frontend and Django backend integrated with PostgreSQL. Features an admin dashboard for menu, orders, and reviews. Mobile-friendly design."
   }
 ];
 
@@ -67,12 +101,26 @@ const Portfolio = () => {
       <p className="portfolio-subheading">Here are some of my past experiences.</p>
 
       <div className="tabs">
-        <button className={activeTab === 'projects' ? 'active' : ''} onClick={() => setActiveTab('projects')}>Projects</button>
-        <button className={activeTab === 'certificates' ? 'active' : ''} onClick={() => setActiveTab('certificates')}>Certificates</button>
-        <button className={activeTab === 'techstack' ? 'active' : ''} onClick={() => setActiveTab('techstack')}>TechStack</button>
+        <button
+          className={activeTab === 'projects' ? 'active' : ''}
+          onClick={() => setActiveTab('projects')}
+        >
+          Projects
+        </button>
+        <button
+          className={activeTab === 'certificates' ? 'active' : ''}
+          onClick={() => setActiveTab('certificates')}
+        >
+          Certificates
+        </button>
+        <button
+          className={activeTab === 'techstack' ? 'active' : ''}
+          onClick={() => setActiveTab('techstack')}
+        >
+          TechStack
+        </button>
       </div>
 
-      {/* Projects Tab */}
       {activeTab === 'projects' && (
         <div className="portfolio-content">
           <button className="nav-btn" onClick={handlePrev}><ChevronLeft /></button>
@@ -96,7 +144,6 @@ const Portfolio = () => {
         </div>
       )}
 
-      {/* Certificates Tab */}
       {activeTab === 'certificates' && (
         <div className="certificates-grid">
           <div className="certificate-card">
@@ -108,7 +155,6 @@ const Portfolio = () => {
         </div>
       )}
 
-      {/* TechStack Tab */}
       {activeTab === 'techstack' && (
         <div className="portfolio-techstack">
           <div className="techstack-grid">
