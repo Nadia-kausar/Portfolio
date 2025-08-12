@@ -24,20 +24,20 @@ import c1 from '../assets/c1.png';
 import c2 from '../assets/c2.png';
 
 /* ==== New BookHaven Assets ==== */
-import b1 from '../assets/b1.png';
-import b2 from '../assets/b2.png';
-import b3 from '../assets/b3.png';
-import b4 from '../assets/b4.png';
-import b5 from '../assets/b5.png';
-import b6 from '../assets/b6.png';
+import h1 from '../assets/h1.png';
+import h2 from '../assets/h2.png';
+import h3 from '../assets/h3.png';
+import h4 from '../assets/h4.png';
+import h5 from '../assets/h5.png';
+import h6 from '../assets/h6.png';
 
 /* ==== New Coffee Website Assets ==== */
-import s1 from '../assets/s1.png';
-import s2 from '../assets/s2.png';
-import s3 from '../assets/s3.png';
-import s4 from '../assets/s4.png';
-import s5 from '../assets/s5.png';
-import s6 from '../assets/s6.png';
+import si1 from '../assets/si1.png';
+import si2 from '../assets/si2.png';
+import si3 from '../assets/si3.png';
+import si4 from '../assets/si4.png';
+import si5 from '../assets/si5.png';
+import si6 from '../assets/si6.png';
 
 const projects = [
   {
@@ -60,13 +60,13 @@ const projects = [
   },
   {
     title: "📚 BookHaven - React & Django Online Bookstore",
-    images: [b1, b2, b3, b4, b5, b6],
+    images: [h1, h2, h3, h4, h5, h6],
     description:
       "A full-stack online bookstore built with a React frontend, Django backend, and PostgreSQL database. Includes user and superuser (admin) functionality for book management, order processing, and category handling. Fully responsive for laptops and mobiles."
   },
   {
     title: "☕ Coffee Website - HTML/CSS & Django",
-    images: [s1, s2, s3, s4, s5, s6],
+    images: [si1, si2, si3, si4, si5, si6],
     description:
       "A modern coffee shop website with an HTML/CSS frontend and Django backend integrated with PostgreSQL. Features an admin dashboard for menu, orders, and reviews. Mobile-friendly design."
   }
