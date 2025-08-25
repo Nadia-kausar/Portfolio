@@ -2,13 +2,19 @@
 .footer {
   background-color: var(--primary-bg);
   color: var(--white);
-  padding: clamp(40px, 5vw, 60px) 5% clamp(25px, 4vw, 40px);
+  padding: clamp(40px, 5vw, 60px) 0 clamp(25px, 4vw, 40px);
   border-top: 3px solid #1f1f1f;
   box-shadow: 0 -8px 32px rgba(0, 255, 195, 0.2);
   text-align: center;
   width: 100%;
   font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1300px; /* same as navbar */
+  margin: 0 auto;
+  padding: 0 24px; /* same horizontal padding as navbar-container */
 }
 
 .footer-title {
@@ -33,20 +39,10 @@
   margin: 28px 0;
   list-style: none;
   padding: 0;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.footer-links li {
-  flex: 1 1 auto;
-  max-width: 200px;
-  min-width: 140px;
 }
 
 .footer-links li a {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 10px;
   font-weight: 600;
@@ -86,47 +82,31 @@
 
 /* ========== Responsive ========== */
 
-/* Tablet & below */
+/* Mobile & Tablet (like navbar) */
 @media screen and (max-width: 768px) {
   .footer-links {
     flex-direction: column;
-    align-items: center;
     gap: 16px;
   }
-  .footer-links li {
-    max-width: none;
+  .footer-links li a {
     width: 100%;
+    justify-content: center;
   }
 }
 
 /* Laptop screens (1024px–1440px) */
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
-  .footer {
-    padding: 80px 10% 60px; /* Increased padding for laptop screens */
-  }
   .footer-links {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 20px;
-    justify-content: center;
     max-width: 900px;
-  }
-  .footer-links li {
-    max-width: none;
-    min-width: auto;
-  }
-  .footer-links li a {
-    padding: 12px 18px; /* Slightly larger button area */
-    font-size: 1rem;
-  }
-  .footer-icon {
-    font-size: 1.2rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 /* Ultra-wide screens */
 @media screen and (min-width: 1441px) {
-  .footer {
+  .footer-container {
     padding-left: 15%;
     padding-right: 15%;
   }

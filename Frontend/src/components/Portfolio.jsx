@@ -22,8 +22,10 @@ import fi3 from "../assets/nadia2.jpeg";
 
 import c1 from '../assets/c1.png';
 import c2 from '../assets/c2.png';
+import c3 from '../assets/c3.png';
+import c4 from '../assets/c4.png';
 
-/* ==== New BookHaven Assets ==== */
+/* ==== BookHaven Assets ==== */
 import h1 from '../assets/h1.png';
 import h2 from '../assets/h2.png';
 import h3 from '../assets/h3.png';
@@ -31,13 +33,25 @@ import h4 from '../assets/h4.png';
 import h5 from '../assets/h5.png';
 import h6 from '../assets/h6.png';
 
-/* ==== New Coffee Website Assets ==== */
+/* ==== Coffee Website Assets ==== */
 import si1 from '../assets/si1.png';
 import si2 from '../assets/si2.png';
 import si3 from '../assets/si3.png';
 import si4 from '../assets/si4.png';
 import si5 from '../assets/si5.png';
 import si6 from '../assets/si6.png';
+
+/* ==== Learning Management System Assets ==== */
+import l1 from '../assets/l1.png';
+import l2 from '../assets/l2.png';
+import l3 from '../assets/l3.png';
+import l4 from '../assets/l4.png';
+import l5 from '../assets/l5.png';
+import l6 from '../assets/l6.png';
+import l7 from '../assets/l7.png';
+import l8 from '../assets/l8.png';
+import l9 from '../assets/l9.png';
+import l10 from '../assets/l10.png';
 
 const projects = [
   {
@@ -69,6 +83,15 @@ const projects = [
     images: [si1, si2, si3, si4, si5, si6],
     description:
       "A modern coffee shop website with an HTML/CSS frontend and Django backend integrated with PostgreSQL. Features an admin dashboard for menu, orders, and reviews. Mobile-friendly design."
+  },
+  {
+    title: "🎓 Learning Management System - React & Django",
+    images: [l1, l2, l3, l4, l5, l6, l7, l8, l9, l10],
+    description:
+      "A full-stack Learning Management System (LMS) built with React frontend, Django backend, and PostgreSQL database. The system provides separate roles for students and instructors:\n\n" +
+      "- 👩‍🎓 **Student Side**: Students can register/login, enroll in courses, access lessons, attempt quizzes, submit assignments, and download certificates upon completion.\n" +
+      "- 👨‍🏫 **Instructor Side**: Instructors can create courses, upload lessons, manage enrollments, issue certificates, and track student progress.\n\n" +
+      "This LMS is fully responsive, ensuring smooth user experience on both desktop and mobile devices."
   }
 ];
 
@@ -147,10 +170,16 @@ const Portfolio = () => {
       {activeTab === 'certificates' && (
         <div className="certificates-grid">
           <div className="certificate-card">
+            <img src={c1} alt="Certificate 1" />
+          </div>
+          <div className="certificate-card">
             <img src={c2} alt="Certificate 2" />
           </div>
           <div className="certificate-card">
-            <img src={c1} alt="Certificate 1" />
+            <img src={c3} alt="Certificate 3" />
+          </div>
+          <div className="certificate-card">
+            <img src={c4} alt="Certificate 4" />
           </div>
         </div>
       )}
